@@ -1,0 +1,35 @@
+variables:
+  all_purpose_cluster_id: 
+    lookup:
+      cluster: "Donna Cluster2"
+  standard_f4_sn:
+    type: "complex"
+    default:
+      cluster_name: ""
+      spark_version: 15.4.x-scala2.12
+      spark_conf:
+        spark.databricks.cluster.profile: singleNode
+        spark.master: local[*]              
+      node_type_id: Standard_F4
+      spark_env_vars:
+        PYSPARK_PYTHON: /databricks/python3/bin/python3
+      data_security_mode: DATA_SECURITY_MODE_AUTO
+      runtime_engine: STANDARD
+      kind: CLASSIC_PREVIEW
+      is_single_node: true  
+  ds3_v2_sn:
+    type: "complex"
+    default:
+      cluster_name: ""
+      spark_version: 15.4.x-scala2.12
+      spark_conf:
+        spark.databricks.cluster.profile: singleNode
+        spark.master: local[*, 4]              
+      node_type_id: Standard_DS3_v2
+      driver_node_type_id: Standard_DS3_v2
+      spark_env_vars:
+        PYSPARK_PYTHON: /databricks/python3/bin/python3
+      data_security_mode: DATA_SECURITY_MODE_AUTO
+      runtime_engine: STANDARD
+      kind: CLASSIC_PREVIEW
+      is_single_node: true              

@@ -1,0 +1,27 @@
+resources:
+  pipelines:
+    pipeline_citibike_etl_pipeline:
+      name: citibike_etl_pipeline
+      configuration:
+        catalog: "${var.catalog}"
+      libraries:
+        - notebook:
+            path: ../citibike_etl/dlt/01_bronze/01_bronze_citibike.ipynb
+        - notebook:
+            path: ../citibike_etl/dlt/02_silver/02_silver_citibike.ipynb
+        - notebook:
+            path: ../citibike_etl/dlt/03_gold/03_gold_citibike_daily_ride_summary.ipynb
+        - notebook:
+            path: ../citibike_etl/dlt/03_gold/03_gold_citibike_daily_station_performance.ipynb
+      schema: default
+      development: "${var.dev_flag}"
+      # photon: true
+      catalog: "${var.catalog}"
+      serverless: true      
+      # clusters:
+      #   - label: default           
+      #     spark_conf:
+      #       spark.databricks.cluster.profile: singleNode
+      #       spark.master: local[*, 4]         
+      #     driver_node_type_id: Standard_F4
+      #     num_workers: 0

@@ -1,0 +1,26 @@
+resources:
+  jobs:
+    demo_job:
+      name: demo_job
+      tasks:
+        - task_key: notebook_task
+          notebook_task:
+            notebook_path: ../notebooks/notebook_1.ipynb
+            source: WORKSPACE
+          job_cluster_key: Job_cluster
+      job_clusters:
+        - job_cluster_key: Job_cluster
+          new_cluster:
+            spark_version: 15.4.x-scala2.12
+            azure_attributes:
+              first_on_demand: 1
+              spot_bid_max_price: -1
+            node_type_id: Standard_D4s_v3
+            spark_env_vars:
+              PYSPARK_PYTHON: /databricks/python3/bin/python3
+            data_security_mode: DATA_SECURITY_MODE_DEDICATED
+            runtime_engine: STANDARD
+            kind: CLASSIC_PREVIEW
+            is_single_node: true
+      queue:
+        enabled: true

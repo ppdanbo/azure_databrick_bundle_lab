@@ -1,0 +1,188 @@
+<mxfile host="65bd71144e">
+    <diagram id="WD31opCN9VN_CCGLbFjf" name="CICD Workflow">
+        <mxGraphModel dx="1131" dy="968" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://learn.microsoft.com/en-us/azure/databricks/_static/images/bundles/bundles-cicd.png;shadow=1;" parent="1" vertex="1">
+                    <mxGeometry x="358" y="27.63" width="646" height="363.38" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Continuous Integration" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="617" y="447" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Databricks Development and CI/CD Workflow" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="634" y="-16" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://learn.microsoft.com/en-us/azure/databricks/_static/images/bundles/bundles-cicd.png;shadow=1;" parent="1" vertex="1">
+                    <mxGeometry x="103" y="499" width="640" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;1. Developer clones the remote repository and creates a feature/** branch.&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;2.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;Developer implements their changes and runs local unit tests.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;3.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;Developer pushes the feature branch to GitHub and opens a Pull Request against &lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot; class=&quot;s1&quot;&gt;main&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;4.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;Opening the PR triggers the CI workflow on GitHub Actions.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;5.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;The CI workflow checks out the code, installs dependencies, and runs the unit tests automatically.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="769" y="499" width="488" height="362" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Continuous Delivery" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="617" y="961" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;1.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;Once the PR is approved and merged into &lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot; class=&quot;s1&quot;&gt;main&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;, the CD pipeline kicks off automatically.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;2.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;The Databricks Asset Bundle (DAB) is deployed to the &lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot; class=&quot;s1&quot;&gt;&lt;b&gt;Test&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt; workspace.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;3. The &lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;Test&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt; workspace is for&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;end-to-end integration and data-quality checks&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;4.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;If all integration tests pass, the pipeline pauses and awaits a manual approval (via a protected GitHub Actions environment).&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;5.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;After approval, the same DAB is promoted and deployed into the &lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot; class=&quot;s1&quot;&gt;&lt;b&gt;Production&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt; workspace.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="769" y="1019" width="516" height="362" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://learn.microsoft.com/en-us/azure/databricks/_static/images/bundles/bundles-cicd.png;shadow=1;" parent="1" vertex="1">
+                    <mxGeometry x="103" y="1019" width="640" height="360" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram name="Copy of CICD Workflow" id="b6_LKP7QLK2ujBIc0AMn">
+        <mxGraphModel dx="1131" dy="968" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="8B7jvct-IgSm8lC-Ptgx-0"/>
+                <mxCell id="8B7jvct-IgSm8lC-Ptgx-1" parent="8B7jvct-IgSm8lC-Ptgx-0"/>
+                <mxCell id="8B7jvct-IgSm8lC-Ptgx-2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://learn.microsoft.com/en-us/azure/databricks/_static/images/bundles/bundles-cicd.png;shadow=1;" vertex="1" parent="8B7jvct-IgSm8lC-Ptgx-1">
+                    <mxGeometry x="358" y="27.63" width="646" height="363.38" as="geometry"/>
+                </mxCell>
+                <mxCell id="8B7jvct-IgSm8lC-Ptgx-3" value="Continuous Integration" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="8B7jvct-IgSm8lC-Ptgx-1">
+                    <mxGeometry x="617" y="447" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8B7jvct-IgSm8lC-Ptgx-4" value="Databricks Development and CI/CD Workflow" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="8B7jvct-IgSm8lC-Ptgx-1">
+                    <mxGeometry x="634" y="-16" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8B7jvct-IgSm8lC-Ptgx-5" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://learn.microsoft.com/en-us/azure/databricks/_static/images/bundles/bundles-cicd.png;shadow=1;" vertex="1" parent="8B7jvct-IgSm8lC-Ptgx-1">
+                    <mxGeometry x="103" y="499" width="640" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="8B7jvct-IgSm8lC-Ptgx-7" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;1. Developer clones the remote repository and creates a feature/** branch.&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;2.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;Developer implements their changes and runs local unit tests.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;3.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;Developer pushes the feature branch to GitHub and opens a Pull Request against &lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot; class=&quot;s1&quot;&gt;main&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;4.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;Opening the PR triggers the CI workflow on GitHub Actions.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;5.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;The CI workflow checks out the code, installs dependencies, and runs the unit tests automatically.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="8B7jvct-IgSm8lC-Ptgx-1">
+                    <mxGeometry x="769" y="499" width="488" height="362" as="geometry"/>
+                </mxCell>
+                <mxCell id="8B7jvct-IgSm8lC-Ptgx-8" value="Continuous Delivery" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="8B7jvct-IgSm8lC-Ptgx-1">
+                    <mxGeometry x="617" y="961" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8B7jvct-IgSm8lC-Ptgx-9" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;1.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;Once the PR is approved and merged into &lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot; class=&quot;s1&quot;&gt;main&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;, the CD pipeline kicks off automatically.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;2.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;The Databricks Asset Bundle (DAB) is deployed to the &lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot; class=&quot;s1&quot;&gt;&lt;b&gt;Test&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt; workspace.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;3. The &lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;Test&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt; workspace is for&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;end-to-end integration and data-quality checks&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;4.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;If all integration tests pass, the pipeline pauses and awaits a manual approval (via a protected GitHub Actions environment).&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;5.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt;After approval, the same DAB is promoted and deployed into the &lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot; class=&quot;s1&quot;&gt;&lt;b&gt;Production&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-weight: normal;&quot;&gt; workspace.&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="8B7jvct-IgSm8lC-Ptgx-1">
+                    <mxGeometry x="769" y="1019" width="516" height="362" as="geometry"/>
+                </mxCell>
+                <mxCell id="8B7jvct-IgSm8lC-Ptgx-10" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://learn.microsoft.com/en-us/azure/databricks/_static/images/bundles/bundles-cicd.png;shadow=1;" vertex="1" parent="8B7jvct-IgSm8lC-Ptgx-1">
+                    <mxGeometry x="103" y="1019" width="640" height="360" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="KkCrhf0CTYJlZ5tWA92Y" name="Process Flow">
+        <mxGraphModel dx="919" dy="568" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-33" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#E0FFF0;sketch=1;" parent="1" vertex="1">
+                    <mxGeometry x="903" y="85" width="622" height="253" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-32" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillWeight=4;hachureGap=8;hachureAngle=45;fillColor=#C0DEEC;sketch=1;" parent="1" vertex="1">
+                    <mxGeometry x="102" y="85" width="751" height="253" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-3" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-1" target="BZKM3FHya9Z55TpuSgT5-2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-1" value="Start" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="180" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-5" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-2" target="BZKM3FHya9Z55TpuSgT5-4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-2" value="Developer works on a feature branch and commits changes" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="160" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-7" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-4" target="BZKM3FHya9Z55TpuSgT5-6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-4" value="Triggers CI workflow" style="html=1;dashed=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="370" y="185" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-10" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-6" target="BZKM3FHya9Z55TpuSgT5-9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-6" value="Open PR to main" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="160" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-8" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-4" target="BZKM3FHya9Z55TpuSgT5-1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="420" y="330"/>
+                            <mxPoint x="340" y="330"/>
+                            <mxPoint x="160" y="330"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-12" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-9" target="BZKM3FHya9Z55TpuSgT5-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-9" value="Triggers CI workflow" style="html=1;dashed=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="185" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-13" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-11" target="BZKM3FHya9Z55TpuSgT5-2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="800" y="320"/>
+                            <mxPoint x="540" y="320"/>
+                            <mxPoint x="290" y="320"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-15" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-11" target="BZKM3FHya9Z55TpuSgT5-14" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-11" value="Approve PR" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="170" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-17" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-14" target="BZKM3FHya9Z55TpuSgT5-16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-14" value="Merge to main" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="160" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-19" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-16" target="BZKM3FHya9Z55TpuSgT5-18" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-16" value="Triggers CD workflow to Test" style="html=1;dashed=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1040" y="185" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-20" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-18" target="BZKM3FHya9Z55TpuSgT5-2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1210" y="300"/>
+                            <mxPoint x="730" y="300"/>
+                            <mxPoint x="290" y="300"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-22" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-18" target="BZKM3FHya9Z55TpuSgT5-21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-18" value="Manual Approval" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1170" y="170" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-21" value="Resume CD workflow to Prod" style="html=1;dashed=0;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="185" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-23" value="End" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
+                    <mxGeometry x="1410" y="180" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-24" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="BZKM3FHya9Z55TpuSgT5-21" target="BZKM3FHya9Z55TpuSgT5-23" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-25" value="Yes" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="847" y="180" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-27" value="Yes" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1230" y="180" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-28" value="No" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="785" y="250" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-29" value="No" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1195" y="250" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-34" value="Continuous Integration" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="427.5" y="98" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="BZKM3FHya9Z55TpuSgT5-35" value="Continuous Delivery" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="1175" y="92" width="100" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

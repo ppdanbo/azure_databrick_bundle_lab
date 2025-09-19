@@ -1,0 +1,5 @@
+[run]
+omit = 
+    src/dab_main/*.py
+    src/__init__.py
+    src/*/__init__.py

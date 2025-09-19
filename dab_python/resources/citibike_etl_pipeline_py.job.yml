@@ -1,0 +1,63 @@
+resources:
+  jobs:
+    citibike_etl_pipeline_py:
+      name: citibike_etl_pipeline_py
+      tasks:
+        - task_key: 00_wheel_upload
+          python_wheel_task:
+            package_name: dab_python_pkg
+            entry_point: run
+          existing_cluster_id: 0910-040157-l38vfs81
+          libraries:            
+            - whl: ../dist/*.whl
+        - task_key: 01_bronze_citibike
+          depends_on:
+            - task_key: 00_wheel_upload
+          spark_python_task:
+            python_file: ../citibike_etl/scripts/01_bronze/01_bronze_citibike.py
+            parameters:
+              - "{{job.id}}"
+              - "{{job.run_id}}"
+              - "{{task.run_id}}"
+              - "{{job.start_time.iso_datetime}}"
+              - "${var.catalog}"
+          existing_cluster_id: 0910-040157-l38vfs81    
+          # job_cluster_key: standard_f4_sn          
+        - task_key: 02_silver_citibike
+          depends_on:
+            - task_key: 01_bronze_citibike
+          spark_python_task:
+            python_file: ../citibike_etl/scripts/02_silver/02_silver_citibike.py
+            parameters:
+              - "{{job.id}}"
+              - "{{job.run_id}}"
+              - "{{task.run_id}}"
+              - "{{job.start_time.iso_datetime}}"
+              - "${var.catalog}"
+          existing_cluster_id: 0910-040157-l38vfs81
+          # job_cluster_key: standard_f4_sn            
+        - task_key: 03_gold_citibike_daily_ride_summary
+          depends_on:
+            - task_key: 02_silver_citibike
+          spark_python_task:
+            python_file: ../citibike_etl/scripts/03_gold/03_gold_citibike_daily_ride_summary.py
+            parameters:
+              - "${var.catalog}"
+          existing_cluster_id: 0910-040157-l38vfs81
+          # job_cluster_key: standard_f4_sn
+        - task_key: 03_gold_citibike_daily_station_performance
+          depends_on:
+            - task_key: 02_silver_citibike
+          spark_python_task:
+            python_file: ../citibike_etl/scripts/03_gold/03_gold_citibike_daily_station_performance.py
+            parameters:
+              - "${var.catalog}"
+          existing_cluster_id: 0910-040157-l38vfs81
+          # job_cluster_key: standard_f4_sn
+      job_clusters:
+        - job_cluster_key: ds3_v2_sn
+          new_cluster: "${var.ds3_v2_sn}"
+        - job_cluster_key: standard_f4_sn
+          new_cluster: "${var.standard_f4_sn}" 
+      queue:
+        enabled: true
