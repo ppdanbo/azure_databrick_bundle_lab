@@ -84,9 +84,8 @@ This repository was built from the original repo https://github.com/pathfinder-a
    databricks bundle deploy --target test
    databricks bundle deploy -t test
    databricks bundle destroy 
-   ```
 
-   #### az login and basic cmds
+   #### az cmds
    ``` bash
    az login --use-device-code
    
@@ -123,6 +122,15 @@ This repository was built from the original repo https://github.com/pathfinder-a
    https://docs.databricks.com/dev-tools/vscode-ext.html.
 
 
+7. To set up and run pytest, run the following commands:
+
+   ```bash
+   pip install pytest-cov
+
+   pytest --cov=src --cov-report=term
+
+   pytest --cov=src --cov-report=term --cov-report=html
+   ```
 ## References：
 - DataBricks CLI:  https://learn.microsoft.com/en-us/azure/databricks/dev-tools/cli/commands
 - DataBricks API:  https://docs.databricks.com/api/azure/workspace/introduction
@@ -132,3 +140,7 @@ This repository was built from the original repo https://github.com/pathfinder-a
 - Bundles Examples:  https://learn.microsoft.com/en-us/azure/databricks/dev-tools/bundles/examples
 - AZURE CLI: https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest
 - https://learn.microsoft.com/en-us/azure/databricks/jobs/dynamic-value-references
+- https://docs.databricks.com/api/azure/workspace/introduction
+
+- Pyspark: https://spark.apache.org/docs/latest/api/python/getting_started/install.html#dependencies
+- PYTEST: https://docs.pytest.org/en/stable/
