@@ -86,7 +86,7 @@ This repository was built from the original repo https://github.com/pathfinder-a
    databricks bundle destroy 
    ```
 
-   #### az login and basic cmds
+   #### Azure login & basic cmds
    ``` bash
    az login --use-device-code
    
